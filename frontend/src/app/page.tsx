@@ -24,7 +24,7 @@ export default function Home() {
     setHistory((h) => [...h, userEntry]);
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:8000/api/dialogue", { message: msg });
+      const res = await axios.post("https://socrates-llm.onrender.com/api/dialogue", { message: msg });
       setHistory((h) => [
         ...h.slice(0, -1),
         { ...userEntry, category: res.data.category, timestamp: userEntry.timestamp },
