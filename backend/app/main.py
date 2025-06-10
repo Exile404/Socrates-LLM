@@ -33,3 +33,7 @@ async def get_dialogue(input_data: UserInput):
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/healthy")
+async def health_check():
+    return {"status": "healthy"}
